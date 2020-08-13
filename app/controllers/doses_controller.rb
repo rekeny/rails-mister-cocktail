@@ -11,8 +11,6 @@ class DosesController < ApplicationController
     if @dose.save
       redirect_to cocktail_path(@cocktail)
     else
-      @cocktail = Cocktail.find(params[:cocktail_id])
-      @dose = Dose.new
       render 'cocktails/show'
     end
   end
