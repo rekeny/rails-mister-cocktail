@@ -1,11 +1,10 @@
-<h1>Welcome to Fernando's Cocktail List</h1>
 
+    <h1>Marioneta's Cocktail List</h1>
 <ul>
-  <% @cocktails.each do |cocktail| %>
-  <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-<% end %>
+      <% @cocktails.each do |cocktail| %>
+          <li> <%= link_to cocktail.name, cocktail_path(cocktail) %> </li>
+      <% end %>
 </ul>
-
 <div>
   <%= simple_form_for @cocktail do |f| %>
   <%= f.input :name %>
