@@ -5,7 +5,7 @@
 <div class="container">
   <div class="card-grid">
     <% @cocktails.each do |cocktail| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_tag("https://res.cloudinary.com/dpykcz6ym/image/upload/v1597410260/gpvpbzor3f5e9xxeyrrx.jpg", crop: :fill) %>')">
           <%= link_to cocktail.name.downcase.split.map(&:capitalize).join(' '), cocktail_path(cocktail), class: "cocktail-link" %>
         </div>
     <% end %>
