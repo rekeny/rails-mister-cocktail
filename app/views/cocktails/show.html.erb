@@ -1,17 +1,31 @@
-<h2><%= @cocktail.name.downcase.split.map(&:capitalize).join(' ') %></h2>
-<% @cocktail.doses.each do |dose| %>
-  <p><%= dose.description %> - <%= dose.ingredient.name %> <%= link_to '🗑',
-  dose_path(dose),
-  method: :delete,
-  data: { confirm: "Are you sure?"} %></p>
-<% end %>
+<div class="header-cocktail" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @cocktail.photo.key %>')">
+  <h2><%= @cocktail.name.downcase.split.map(&:capitalize).join(' ') %></h2>
+</div>
 
+<div class="container">
+  <% @cocktail.doses.each do |dose| %>
+    <p><%= dose.ingredient.name %> - <%= dose.description %> <%= link_to '🗑',
+    dose_path(dose),
+    method: :delete,
+    data: { confirm: "Are you sure?"} %></p>
+  <% end %>
 <%= simple_form_for [@cocktail, @dose] do |f| %>
   <%= f.input :description %>
   <%= f.association :ingredient %>
   <%= f.submit %>
-
 <% end %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
 
 <%= link_to "Back", cocktails_path  %>
 
