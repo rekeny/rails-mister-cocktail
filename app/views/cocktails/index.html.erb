@@ -1,13 +1,20 @@
+<div class="header">
+  <h1>Marioneta's Cocktail List</h1>
+</div>
 
-    <h1>Marioneta's Cocktail List</h1>
-<ul>
-      <% @cocktails.each do |cocktail| %>
-          <li> <%= link_to cocktail.name, cocktail_path(cocktail) %> </li>
-      <% end %>
-</ul>
-<div>
-  <%= simple_form_for @cocktail do |f| %>
-  <%= f.input :name %>
-  <%= f.submit %>
-  <% end %>
+<div class="container">
+  <div class="card-grid">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+          <%= link_to cocktail.name.downcase.split.map(&:capitalize).join(' '), cocktail_path(cocktail), class: "cocktail-link" %>
+        </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= simple_form_for @cocktail do |f| %>
+    <%= f.input :name %>
+    <%= f.submit %>
+    <% end %>
+</div>
 </div>

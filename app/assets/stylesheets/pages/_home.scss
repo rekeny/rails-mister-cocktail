@@ -1,1 +1,21 @@
 // Specific CSS for your home-page
+body {
+  background: #308CC5;
+  height: 100vh;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.cocktail-link {
+  color:pink;
+  &:hover {
+    text-decoration: none;
+
+  }
+}

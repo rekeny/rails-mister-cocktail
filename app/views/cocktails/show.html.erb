@@ -1,4 +1,4 @@
-<h2><%= @cocktail.name %></h2>
+<h2><%= @cocktail.name.downcase.split.map(&:capitalize).join(' ') %></h2>
 <% @cocktail.doses.each do |dose| %>
   <p><%= dose.description %> - <%= dose.ingredient.name %> <%= link_to '🗑',
   dose_path(dose),
