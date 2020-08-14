@@ -7,7 +7,7 @@ body {
 .card-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  // grid-template-rows: 1fr 1fr 1fr;
   grid-gap: 1rem;
   margin-top: 1.5rem;
 }
@@ -17,5 +17,11 @@ body {
   &:hover {
     text-decoration: none;
 
+  }
+}
+
+@media (max-width: 400px) {
+  .card-grid {
+    grid-template-columns: 1fr;
   }
 }
