@@ -1,13 +1,36 @@
 .header-cocktail {
+  align-items: center;
   background-size: cover;
   background-position: center;
-  height: 50vh;
   color: pink;
   display: flex;
+  height: 50vh;
   justify-content: center;
-  align-items: center;
+  margin-bottom: 2rem;
   h2 {
   font-size: 4rem;
-
+  font-weight: bolder;
   }
+}
+.container-show {
+  display: flex;
+}
+
+.list-description {
+  color: pink;
+  // display: flex;
+  // flex: 0 0 50%;
+  // flex-wrap: wrap;
+  // flex-direction: column;
+  // align-content: space-between;
+  p {
+    margin: 0;
+  }
+  .back-button {
+    // align-self: flex-end;
+  }
+}
+
+.form-dose {
+  color: pink;
 }
