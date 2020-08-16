@@ -8,7 +8,7 @@
       <h5><strong>Measures</strong></h5>
       <% @cocktail.doses.each do |dose| %>
         <p><%= dose.ingredient.name %> - <%= dose.description %> <%= link_to '🗑',
-        dose_path(@cocktail),
+        dose_path(dose),
         method: :delete,
         data: { confirm: "Are you sure?"} %></p>
       <% end %>
