@@ -12,8 +12,14 @@
   <div class="card-grid">
     <% @cocktails.each do |cocktail| %>
       <%= link_to cocktail_path(cocktail), class: "link-card" do  %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key %>')">
-          <p class="cocktail-link"><%= cocktail.name.downcase.split.map(&:capitalize).join(' ') %></p>
+        <div class="card-animation">
+          <div class="card-category-front" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key %>')">
+            <p class="cocktail-link"><%= cocktail.name.downcase.split.map(&:capitalize).join(' ') %></p>
+          </div>
+          <div class="card-category-back" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key %>')">
+            <p class="cocktail-link"><%= cocktail.name.downcase.split.map(&:capitalize).join(' ') %></p>
+            <p>🤙🏼</p>
+          </div>
         </div>
       <% end %>
     <% end %>
@@ -21,6 +27,5 @@
 </div>
 
 <%= render 'modal-new-cocktail' %>
-
 
 
